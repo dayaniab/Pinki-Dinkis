@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PINKI DINKIS</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<!-- Botón flotante de WhatsApp -->
+<a href="https://wa.me/525633313462" target="_blank" class="whatsapp-float" title="¡Chatea con nosotros!">
+  <img src="https://cdn-icons-png.flaticon.com/512/220/220236.png" alt="WhatsApp" />
+</a>
+
+<body>
+  <header>
+    
+    <h1 class="logo">PINKI DINKIS</h1>
+  </header>
+
+  <section class="hero">
+    <h2>🎉 Eventos Infantiles Inolvidables 🎉</h2>
+    <button id="ver-eventos">Ver Productos</button>
+  </section>
+    
+
+    <section id="productos" class="productos" style="display: none;">
+    <h3>🎀 Lo Más Vendido</h3>
+    <div class="product-grid" id="grid-productos">
+      <!-- Se llenará con JS -->
+    </div>
+  </section>
+
+<!-- Formulario oculto precios -->
+<div id="formulario-precio" style="display:none;" class="formulario-popup">
+  <h3>Consulta de precios</h3>
+  <form id="formulario-datos">
+    <label>Municipio:
+      <input type="text" id="municipio" required>
+    </label>
+    <label>Fecha del evento:
+      <input type="date" id="fecha" required>
+    </label>
+    <button type="submit">Ver precios</button>
+  </form>
+  <div id="formulario-precio" style="display:none;">
+  <form id="formulario-datos">
+    <label>Municipio:</label>
+    <input type="text" name="municipio" required><br><br>
+
+    <label>Fecha del evento:</label>
+    <input type="date" name="fecha" required><br><br>
+
+    <button type="submit">Ver Precios</button>
+  </form>
+</div>
+</div>
+
+<!-- Galería de imágenes -->
+<div id="galeria-precios" style="display:none;" class="galeria">
+  <h3>Opciones disponibles:</h3>
+  <div class="imagenes">
+    <!-- Aquí se insertarán las 5 imágenes -->
+  </div>
+</div>
+<!-- Confirmación -->
+<div id="confirmacion" style="display:none;" class="confirmacion">
+  <h3>¿Deseas agendar tu evento?</h3>
+  <button id="btn-si">Sí</button>
+  <button id="btn-no">No</button>
+</div>
+
+<!-- Formulario de reserva -->
+<div id="form-reserva" style="display:none;" class="formulario-popup">
+  <h3>Agenda tu evento</h3>
+  <form id="form-agendar">
+    <input type="text" id="nombre-cliente" placeholder="Tu nombre" required><br><br>
+    <input type="date" id="fecha-cliente" required><br><br>
+    <input type="tel" id="telefono-cliente" placeholder="Teléfono" required><br><br>
+    <button type="submit">Enviar</button>
+  </form>
+</div>
+
+<!-- Mensaje si elige "No" -->
+<div id="mensaje-no" style="display:none; text-align:center; padding:20px;">
+  <p>Puedes seguir explorando nuestras opciones para hacer tu evento inolvidable. 🎉</p>
+</div>
+
+  
+
+  <footer>
+    <p>&copy; 2025 PINKI DINKIS - Todos los derechos reservados</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <div id="mensaje-final" style="display:none; text-align:center; padding:30px; font-size:18px; background:#fff0f5; border-radius:15px;">
+  <p>🎊 ¡Gracias por confiar en Pinki Dinkis! Tu evento ha sido agendado con éxito. Nos comunicaremos contigo pronto. 🎊</p>
+</div>
+
+</body>
+<div style="margin-top:30px; text-align:center;">
+  <button onclick="mostrarReservas()">Ver eventos agendados</button>
+  <div id="lista-reservas" style="padding:20px;"></div>
+</div>
+
+</html>
