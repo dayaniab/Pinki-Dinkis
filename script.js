@@ -19,16 +19,26 @@ const productos = [
     precios: [
       "https://i.imgur.com/CTfmji2.jpeg",
       "https://i.imgur.com/yFosOMa.jpeg",
-      "https://via.placeholder.com/150/FFB6C1?text=Animador3",
-      "https://via.placeholder.com/150/FFB6C1?text=Animador4",
-      "https://via.placeholder.com/150/FFB6C1?text=Animador5"
+      "https://i.imgur.com/I2goapV.jpeg",
+      "https://i.imgur.com/kneT7uz.jpeg"
     ]
   },
   {
     nombre: "PINTA CARITAS",
     imagen: "https://i.imgur.com/VFUwbCP.jpeg",
     precios: [
-      "https://i.imgur.com/FPaPgLW.jpeg",
+      "https://imgur.com/FPaPgLW",
+      "https://via.placeholder.com/150/90EE90?text=Pinta2",
+      "https://via.placeholder.com/150/90EE90?text=Pinta3",
+      "https://via.placeholder.com/150/90EE90?text=Pinta4",
+      "https://via.placeholder.com/150/90EE90?text=Pinta5"
+    ]
+  },
+  {
+    nombre: "BELY Y BETO",
+    imagen: "https://i.imgur.com/lnS5Gio.jpeg",
+    precios: [
+      "https://imgur.com/FPaPgLW",
       "https://via.placeholder.com/150/90EE90?text=Pinta2",
       "https://via.placeholder.com/150/90EE90?text=Pinta3",
       "https://via.placeholder.com/150/90EE90?text=Pinta4",
@@ -46,7 +56,7 @@ const productos = [
       "https://via.placeholder.com/150/FFD700?text=Personaje5"
     ]
   }
-];
+]
 
 let productoSeleccionado = null;
 
