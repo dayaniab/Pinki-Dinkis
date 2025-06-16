@@ -4,6 +4,18 @@ body {
   background: #e5a0bc;
   color: #333;
 }
+/*estilo del logo */
+  #logo-flotante {
+    position: fixed;
+    top: 35px;   /*pocision abajo, arriba*/
+    right: 250px; /*pocision derecha, izquierda*/
+    width: 100px;
+    height: 100px;
+    z-index: 1000;
+    border-radius: 0px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  }
+
 
 .top-bar {
   background: #ffd6e0;
@@ -15,12 +27,12 @@ body {
 .logo {
   text-align: center;
   font-size: 3rem;
-  color: #ff85a2;
+  color: #f08ca3;
   margin: 20px 0;
 }
 
 .hero {
-  background: linear-gradient(to right, #fff0f6, #ffe5ec);
+  background: linear-gradient(to right, #ed85af, #fced69);
   text-align: center;
   padding: 50px 20px;
 }
@@ -48,7 +60,7 @@ button {
 }
 
 .card {
-  background: white;
+  background: rgb(204, 209, 205);
   padding: 15px;
   border-radius: 12px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -109,7 +121,7 @@ body {
 }
 
 button {
-  background-color: #ffb3c6;
+  background-color: #f399d7;
   border: none;
   padding: 10px 20px;
   font-size: 1rem;
@@ -148,8 +160,9 @@ footer {
   padding: 15px;
   margin-top: 30px;
 }
+/* Estilo del formulario*/
 .formulario-popup {
-  background: #fff;
+  background: #fcfbfc;
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.2);
@@ -238,7 +251,7 @@ footer {
 }
 
 .producto button {
-  background-color: #f28ab2;
+  background-color: #f28ae9;
   color: white;
   border: none;
   padding: 8px 15px;
@@ -249,5 +262,15 @@ footer {
 }
 
 .producto button:hover {
-  background-color: #e6729d;
+  background-color: #e672da;
+}
+
+.mapa-flotante {
+  position: sticky; /* Flotante */
+  top: 20px;
+  left: 350px;
+  z-index: 9999; /* Encima de todo */
+  box-shadow: 0 0 10px rgba(0,0,0,0.3); /* Opcional: sombrita */
+  border-radius: 12px;
+  overflow: hidden;
 }
