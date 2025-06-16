@@ -11,9 +11,61 @@
   <img src="https://cdn-icons-png.flaticon.com/512/220/220236.png" alt="WhatsApp" />
 </a>
 
+<!-- Botón flotante administrador -->
+<button id="btn-admin" style="
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #ff69b4;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 9999;
+">Administrador</button>
+
+<!-- Formulario  oculto -->
+<div id="form-admin" style="
+  display: none;
+  position: fixed;
+  top: 60px;
+  right: 20px;
+  background-color: white;
+  border: 2px solid #ff69b4;
+  padding: 15px;
+  border-radius: 10px;
+  z-index: 9999;
+">
+  <label>Usuario:<br><input type="text" id="usuario"></label><br><br>
+  <label>Contraseña:<br><input type="password" id="contrasena"></label><br><br>
+  <button onclick="verificarAdmin()">Ingresar</button>
+</div>
+<!-- Codigo para ubicacion-->
+<h2>Ubicación</h2>
+<div class="mapa-flotante"></div>
+<iframe 
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.478841358647!2d-98.9310593244432!3d19.391706081878997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1e22bc178b195%3A0x1a191db757b98b41!2sGacela%20Azteca%20%26%20Cerrada%20Nogales%2C%20San%20Vicente%20Chicoloapan%20de%20Ju%C3%A1rez%20Centro%2C%20Chimalhucan%2C%2056338%20Chimalhuac%C3%A1n%2C%20M%C3%A9x.!5e0!3m2!1ses-419!2smx!4v1749874433032!5m2!1ses-419!2smx"
+  width="25%" 
+  height="300" 
+  style="
+    position: fixed;
+    top: 50px; /* mover ariiba o abajo*/
+    left: 30px;     /* espacio  desde la izquierda */
+    z-index: 1000;
+    border: 3px solid white;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  " 
+  allowfullscreen="" 
+  loading="lazy" 
+  referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+
 <body>
   <header>
-    
+    <img src="logo.png" alt="Logo Pinki" id="logo-flotante">
+
     <h1 class="logo">PINKI DINKIS</h1>
   </header>
 
@@ -97,9 +149,24 @@
 </div>
 
 </body>
-<div style="margin-top:30px; text-align:center;">
-  <button onclick="mostrarReservas()">Ver eventos agendados</button>
-  <div id="lista-reservas" style="padding:20px;"></div>
-</div>
 
 </html>
+<script>
+  const btnAdmin = document.getElementById('btn-admin');
+  const formAdmin = document.getElementById('form-admin');
+
+  btnAdmin.addEventListener('click', () => {
+    formAdmin.style.display = formAdmin.style.display === 'none' ? 'block' : 'none';
+  });
+
+  function verificarAdmin() {
+    const usuario = document.getElementById('usuario').value;
+    const contrasena = document.getElementById('contrasena').value;
+
+    if (usuario === 'day' && contrasena === 'pinkis') {
+      window.location.href = 'admin.html'; // Redirige a página admin
+    } else {
+      alert('Usuario o contraseña incorrectos.');
+    }
+  }
+</script>
