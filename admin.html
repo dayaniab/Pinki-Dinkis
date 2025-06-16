@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Panel de Administración</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #fff0f5;
+    }
+    h1 {
+      color: #ff69b4;
+    }
+    .evento {
+      border: 1px solid #ccc;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      background-color: white;
+      position: relative;
+    }
+    .evento img {
+      width: 100px;
+      margin-top: 10px;
+    }
+    .btn-borrar {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: red;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Eventos Agendados</h1>
+  <div id="lista-admin"></div>
+
+  <script>
+    function mostrarReservasAdmin() {
+      const contenedor = document.getElementById('lista-admin');
+      const reservas = JSON.parse(localStorage.getItem('eventosAgendados')) || [];
+
+      contenedor.innerHTML = '';
+
+      if (reservas.length === 0) {
+        contenedor.innerHTML = "<p>No hay eventos registrados.</p>";
+        return;
+      }
+
+      reservas.forEach((res, index) => {
+        const div = document.createElement('div');
+        div.className = 'evento';
+        div.innerHTML = `
+          <button class="btn-borrar" onclick="borrarReserva(${index})">🗑️ Borrar</button>
+          <strong>Evento ${index + 1}</strong><br>
+          Nombre: ${res.nombre}<br>
+          Fecha: ${res.fecha}<br>
+          Teléfono: ${res.telefono}<br>
+          ${res.imagenSeleccionada ? `<img src="${res.imagenSeleccionada}" alt="Imagen seleccionada"><br>` : ''}
+        `;
+        contenedor.appendChild(div);
+      });
+    }
+
+    function borrarReserva(index) {
+      const confirmar = confirm("¿Estás seguro de que quieres eliminar este evento?");
+      if (!confirmar) return;
+
+      const reservas = JSON.parse(localStorage.getItem('eventosAgendados')) || [];
+      reservas.splice(index, 1); // Elimina el evento por su índice
+      localStorage.setItem('eventosAgendados', JSON.stringify(reservas));
+      mostrarReservasAdmin(); // Recarga la lista
+    }
+
+    // Mostrar reservas al cargar la página
+    window.onload = mostrarReservasAdmin;
+  </script>
+</body>
+</html>
